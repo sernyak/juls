@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юлія Двоїнос | Психотерапевтка</title>
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Підключення шрифту Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Використання шрифту Inter за замовчуванням */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Плавний ефект прокрутки */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Контейнер сторінки -->
+    <div class="container mx-auto max-w-4xl px-4 py-8 md:py-16">
+
+        <!-- Секція "Герой" (Hero Section) -->
+        <header class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+            
+            <!-- Зображення профілю -->
+            <div class="flex-shrink-0">
+                <img 
+                    src="https://placehold.co/200x200/cccccc/333333?text=Juls+Dvns&font=inter" 
+                    alt="Фото профілю Юлії Двоїнос"
+                    class="rounded-full w-48 h-48 md:w-56 md:h-56 object-cover shadow-lg filter grayscale"
+                    onerror="this.src='https://placehold.co/200x200/cccccc/333333?text=J+D&font=inter'"
+                >
+            </div>
+            
+            <!-- Текстовий блок "Героя" -->
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Юлія Двоїнос</h1>
+                <p class="mt-3 text-2xl font-light text-blue-700">Психотерапевтка</p>
+                <p class="mt-4 text-lg text-gray-600">
+                    Психоаналітично-орієнтована та клієнт-центрована психотерапевтка під супервізією.
+                </p>
+                <!-- Кнопки CTA -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                    <a href="#contact" class="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                        Записатись на консультацію
+                    </a>
+                    <a href="#services" class="bg-white text-gray-700 font-medium py-3 px-6 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition duration-300">
+                        Мої послуги
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Роздільник -->
+        <hr class="my-12 md:my-20 border-gray-200">
+
+        <!-- Секція "Напрямки роботи" (Services Section) -->
+        <section id="services" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Напрямки роботи</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Картка 1: Клінічна психологія -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка (приклад) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Клінічна психологія</h3>
+                    <p class="text-gray-600">
+                        Допомога у розумінні та вирішенні психологічних проблем, що базується на клінічному підході та діагностиці.
+                    </p>
+                </div>
+
+                <!-- Картка 2: Психологія кризи -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка (приклад) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Психологія кризи</h3>
+                    <p class="text-gray-600">
+                        Підтримка та супровід у гострих кризових станах, допомога у пошуку ресурсів та стабілізації стану.
+                    </p>
+                </div>
+
+                <!-- Картка 3: Індивідуальні консультації -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка (приклад) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Індивідуальні консультації</h3>
+                    <p class="text-gray-600">
+                        Конфіденційна робота з вашим запитом у безпечному та підтримуючому просторі.
+                    </p>
+                </div>
+                
+                <!-- Картка 4: Про мене (з Інстаграму) -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка (приклад) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Про мій підхід</h3>
+                    <p class="text-gray-600">
+                        Я використовую психоаналітично-орієнтований та клієнт-центрований підходи, що дозволяє глибоко працювати з причинами проблем та водночас створювати атмосферу довіри та прийняття.
+                    </p>
+                </div>
+                
+                <!-- Картка 5: Робота з ПТСР -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка: Щит/Безпека -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Робота з ПТСР</h3>
+                    <p class="text-gray-600">
+                        Спеціалізована допомога та терапія для людей, що пережили травматичні події, з фокусом на відновленні та стабілізації.
+                    </p>
+                </div>
+
+                <!-- Картка 6: Терапія з MDMA -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4">
+                        <!-- Іконка: Медицина/Допомога -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">MDMA-асистована терапія</h3>
+                    <p class="text-gray-600">
+                        Робота з препаратами MDMA в терапевтичних цілях для глибокого опрацювання травми та емоційних блоків (у рамках протоколів).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Футер (Footer) -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="container mx-auto max-w-4xl px-4 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Юлія Двоїнос. Усі права захищено.</p>
+            <p class="text-sm mt-1">Психологічна допомога та консультування.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+
