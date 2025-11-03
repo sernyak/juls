@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивний Бриф | Розпаковка Експертності</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        textarea {
+            transition: all 0.2s ease-in-out;
+            resize: vertical;
+        }
+        textarea:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+        /* Sticky header for controls */
+        .controls-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            background-color: rgba(249, 250, 251, 0.85);
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-3">Гайд з "Розпаковки" Експертності</h1>
+            <p class="text-lg text-gray-600">
+                Використовуйте ці поля для формулювання вашої унікальної філософії та підходу.
+                Відповіді автоматично зберігаються у вашому браузері.
+            </p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls-header py-4 mb-8 border-b border-gray-200 flex flex-col sm:flex-row gap-3 justify-center">
+            <button id="downloadButton" class="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+                Завантажити відповіді (TXT)
+            </button>
+            <button id="clearButton" class="bg-red-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" />
+                </svg>
+                Очистити всі поля
+            </button>
+        </div>
+
+        <!-- Form with questions -->
+        <form id="unpackingForm" class="space-y-10">
+
+            <!-- Part 1 -->
+            <section data-section-title="Частина 1. 'Продовжіть речення'">
+                <h2 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-300">Частина 1. "Продовжіть речення"</h2>
+
+                <!-- Category 1.1 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mb-5" data-section-title="Про вашу місію та роль:">Про вашу місію та роль:</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="mission_1" class="block text-lg font-medium text-gray-700 mb-2">Я вірю, що моє головне завдання — ...</label>
+                        <textarea id="mission_1" name="mission_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_2" class="block text-lg font-medium text-gray-700 mb-2">Я стала психотерапевтом, тому що ...</label>
+                        <textarea id="mission_2" name="mission_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_3" class="block text-lg font-medium text-gray-700 mb-2">Якби я могла дати клієнту на початку терапії одну річ, це було б ...</label>
+                        <textarea id="mission_3" name="mission_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_4" class="block text-lg font-medium text-gray-700 mb-2">Я бачу свою роль не як "лікаря", а радше як ... (наприклад: провідника, партнера, дзеркала, свідка)</label>
+                        <textarea id="mission_4" name="mission_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_5" class="block text-lg font-medium text-gray-700 mb-2">Найбільше задоволення у моїй роботі приносить ...</label>
+                        <textarea id="mission_5" name="mission_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_6" class="block text-lg font-medium text-gray-700 mb-2">Мій підхід унікальний тим, що я ...</label>
+                        <textarea id="mission_6" name="mission_6" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_7" class="block text-lg font-medium text-gray-700 mb-2">Те, що я ніколи не зроблю на сесії — це ...</label>
+                        <textarea id="mission_7" name="mission_7" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="mission_8" class="block text-lg font-medium text-gray-700 mb-2">Головний принцип, яким я керуюсь у роботі — ...</label>
+                        <textarea id="mission_8" name="mission_8" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.2 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Про терапію та процес:">Про терапію та процес:</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="process_1" class="block text-lg font-medium text-gray-700 mb-2">Для мене терапія — це перш за все ... (наприклад: процес пізнання, безпечний простір, спільна робота, інвестиція в себе)</label>
+                        <textarea id="process_1" name="process_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_2" class="block text-lg font-medium text-gray-700 mb-2">Клієнт-центрований підхід для мене означає, що ...</label>
+                        <textarea id="process_2" name="process_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_3" class="block text-lg font-medium text-gray-700 mb-2">Психоаналітичний підхід дає моїм клієнтам ...</label>
+                        <textarea id="process_3" name="process_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_4" class="block text-lg font-medium text-gray-700 mb-2">Найважливіше, що відбувається на сесії — це ...</label>
+                        <textarea id="process_4" name="process_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_5" class="block text-lg font-medium text-gray-700 mb-2">Терапія успішна, коли клієнт ...</label>
+                        <textarea id="process_5" name="process_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_6" class="block text-lg font-medium text-gray-700 mb-2">Я зрозуміла, що справжні зміни починаються з ...</label>
+                        <textarea id="process_6" name="process_6" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_7" class="block text-lg font-medium text-gray-700 mb-2">Безпечний простір у терапії — це коли ...</label>
+                        <textarea id="process_7" name="process_7" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_8" class="block text-lg font-medium text-gray-700 mb-2">На першій сесії ми обов'язково ...</label>
+                        <textarea id="process_8" name="process_8" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_9" class="block text-lg font-medium text-gray-700 mb-2">Клієнти часто кажуть, що сесія зі мною схожа на ...</label>
+                        <textarea id="process_9" name="process_9" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_10" class="block text-lg font-medium text-gray-700 mb-2">Я розумію, що клієнту стає краще, коли він починає ...</label>
+                        <textarea id="process_10" name="process_10" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="process_11" class="block text-lg font-medium text-gray-700 mb-2">Терапія — це не завжди ..., але це завжди ...</label>
+                        <textarea id="process_11" name="process_11" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.3 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Про ваших клієнтів:">Про ваших клієнтів:</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="clients_1" class="block text-lg font-medium text-gray-700 mb-2">Я бачу своїх клієнтів як ... (наприклад: сильних людей, що заплуталися; героїв своїх історій)</label>
+                        <textarea id="clients_1" name="clients_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_2" class="block text-lg font-medium text-gray-700 mb-2">Я захоплююсь у своїх клієнтах їхньою ...</label>
+                        <textarea id="clients_2" name="clients_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_3" class="block text-lg font-medium text-gray-700 mb-2">Я хочу, щоб кожен мій клієнт зрештою відчув ...</label>
+                        <textarea id="clients_3" name="clients_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_4" class="block text-lg font-medium text-gray-700 mb-2">Мій "ідеальний" клієнт — це людина, яка ...</label>
+                        <textarea id="clients_4" name="clients_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_5" class="block text-lg font-medium text-gray-700 mb-2">Найчастіше до мене приходять у стані ...</label>
+                        <textarea id="clients_5" name="clients_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_6" class="block text-lg font-medium text-gray-700 mb-2">Я пишаюся, коли бачу, як мої клієнти після терапії ...</label>
+                        <textarea id="clients_6" name="clients_6" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="clients_7" class="block text-lg font-medium text-gray-700 mb-2">Те, що я хочу сказати кожному, хто вагається почати — ...</label>
+                        <textarea id="clients_7" name="clients_7" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.4 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Про ваші спеціалізації (Травма, ПТСР, Кризи, MDMA):">Про ваші спеціалізації (Травма, ПТСР, Кризи, MDMA):</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="spec_1" class="block text-lg font-medium text-gray-700 mb-2">Робота з травмою вимагає перш за все ...</label>
+                        <textarea id="spec_1" name="spec_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_2" class="block text-lg font-medium text-gray-700 mb-2">Багато хто думає, що ПТСР — це ..., але насправді ...</label>
+                        <textarea id="spec_2" name="spec_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_3" class="block text-lg font-medium text-gray-700 mb-2">Головне, що потрібно знати про психологію кризи — це ...</label>
+                        <textarea id="spec_3" name="spec_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_4" class="block text-lg font-medium text-gray-700 mb-2">Мій досвід у клінічній психології допомагає мені ...</label>
+                        <textarea id="spec_4" name="spec_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_5" class="block text-lg font-medium text-gray-700 mb-2">Найбільше непорозуміння навколо MDMA-терапії — це ...</label>
+                        <textarea id="spec_5" name="spec_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_6" class="block text-lg font-medium text-gray-700 mb-2">Я вирішила працювати з ПТСР, тому що ...</label>
+                        <textarea id="spec_6" name="spec_6" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_7" class="block text-lg font-medium text-gray-700 mb-2">Робота з кризовими станами навчила мене ...</label>
+                        <textarea id="spec_7" name="spec_7" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="spec_8" class="block text-lg font-medium text-gray-700 mb-2">Клінічна психологія — це мій "фундамент", який дозволяє мені ...</label>
+                        <textarea id="spec_8" name="spec_8" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.5 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Про не-терапію (Фрідайвінг):">Про не-терапію (Фрідайвінг):</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="other_1" class="block text-lg font-medium text-gray-700 mb-2">Мій досвід у фрідайвінгу навчив мене ..., і я використовую це в терапії, коли ...</label>
+                        <textarea id="other_1" name="other_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="other_2" class="block text-lg font-medium text-gray-700 mb-2">Фрідайвінг і терапія схожі тим, що ...</label>
+                        <textarea id="other_2" name="other_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.6 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Страхи, Міфи та Заперечення:">Страхи, Міфи та Заперечення:</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="myths_1" class="block text-lg font-medium text-gray-700 mb-2">Багато хто боїться, що терапія — це ..., але насправді ...</label>
+                        <textarea id="myths_1" name="myths_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_2" class="block text-lg font-medium text-gray-700 mb-2">Якщо ви думаєте, що "ваш випадок занадто складний" — ...</label>
+                        <textarea id="myths_2" name="myths_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_3" class="block text-lg font-medium text-gray-700 mb-2">Терапія — це не "просто розмови", це ...</label>
+                        <textarea id="myths_3" name="myths_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_4" class="block text-lg font-medium text-gray-700 mb-2">Почати терапію — це не ознака "слабкості", це ознака ...</label>
+                        <textarea id="myths_4" name="myths_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_5" class="block text-lg font-medium text-gray-700 mb-2">Я знаю, як важко зробити перший крок, тому я завжди ...</label>
+                        <textarea id="myths_5" name="myths_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_6" class="block text-lg font-medium text-gray-700 mb-2">"А що, якщо терапія не допоможе?" Я б відповіла на це ...</label>
+                        <textarea id="myths_6" name="myths_6" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="myths_7" class="block text-lg font-medium text-gray-700 mb-2">Вам не потрібно ... (наприклад: "...готуватися до сесії", "...боятися мого осуду")</label>
+                        <textarea id="myths_7" name="myths_7" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Category 1.7 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Метафори та Образи:">Метафори та Образи:</h3>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="metaphors_1" class="block text-lg font-medium text-gray-700 mb-2">Якби терапія була подорожжю, я була б ... (наприклад: картографом, компасом, тим, хто тримає ліхтар)</label>
+                        <textarea id="metaphors_1" name="metaphors_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="metaphors_2" class="block text-lg font-medium text-gray-700 mb-2">Якби травма була кімнатою, моя робота — ...</label>
+                        <textarea id="metaphors_2" name="metaphors_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="metaphors_3" class="block text-lg font-medium text-gray-700 mb-2">Свою роботу я могла б описати метафорою ...</label>
+                        <textarea id="metaphors_3" name="metaphors_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="metaphors_4" class="block text-lg font-medium text-gray-700 mb-2">Я допомагаю клієнтам перейти від стану ... до стану ...</label>
+                        <textarea id="metaphors_4" name="metaphors_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 2 -->
+            <section data-section-title="Частина 2. Альтернативні методи">
+                <h2 class="text-3xl font-semibold mb-6 pb-2 border-b border-gray-300">Частина 2. Альтернативні методи</h2>
+
+                <!-- Technique 1 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mb-5" data-section-title="Техніка 1: Історія 'Ідеального Клієнта'">Техніка 1: Історія "Ідеального Клієнта"</h3>
+                <p class="text-gray-600 mb-4 pl-4">Опишіть (можна для себе) випадок, яким ви найбільше пишаєтесь.</p>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="tech1_1" class="block text-lg font-medium text-gray-700 mb-2">1. З чим людина прийшла? (Який був запит, який був стан?)</label>
+                        <textarea id="tech1_1" name="tech1_1" rows="4" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech1_2" class="block text-lg font-medium text-gray-700 mb-2">2. Що ви робили? (Який був процес? Де був "поворотний момент"?)</label>
+                        <textarea id="tech1_2" name="tech1_2" rows="4" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech1_3" class="block text-lg font-medium text-gray-700 mb-2">3. З чим людина пішла? (Що змінилося в її житті?)</label>
+                        <textarea id="tech1_3" name="tech1_3" rows="4" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Technique 2 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Техніка 2: 'З ким я НЕ працюю'">Техніка 2: "З ким я НЕ працюю"</h3>
+                <p class="text-gray-600 mb-4 pl-4">Чіткі межі — ознака сильного експерта. Це відфільтровує "не ваших" клієнтів і притягує "ваших".</p>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="tech2_1" class="block text-lg font-medium text-gray-700 mb-2">Я, ймовірно, не зможу вам допомогти, якщо ... (наприклад: "...ви очікуєте миттєвих результатів за 1 сесію", "...ви не готові до активної роботи між сесіями")</label>
+                        <textarea id="tech2_1" name="tech2_1" rows="4" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech2_2" class="block text-lg font-medium text-gray-700 mb-2">Мій підхід не підійде тим, хто ...</label>
+                        <textarea id="tech2_2" name="tech2_2" rows="4" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Technique 3 -->
+                <h3 class="text-2xl font-semibold text-gray-800 mt-10 mb-5" data-section-title="Техніка 3: Драбина 'Чому?'">Техніка 3: Драбина "Чому?"</h3>
+                <p class="text-gray-600 mb-4 pl-4">Візьміть твердження "Я допомагаю людям з ПТСР" і 5 разів спитайте "Чому це важливо?", записуючи відповіді.</p>
+                <div class="space-y-6 pl-4">
+                    <div class="question-block">
+                        <label for="tech3_1" class="block text-lg font-medium text-gray-700 mb-2">1. Бо вони повертають собі контроль над життям. Чому це важливо?</label>
+                        <textarea id="tech3_1" name="tech3_1" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech3_2" class="block text-lg font-medium text-gray-700 mb-2">2. (Ваша відповідь). Чому це важливо?</label>
+                        <textarea id="tech3_2" name="tech3_2" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech3_3" class="block text-lg font-medium text-gray-700 mb-2">3. (Ваша відповідь). Чому це важливо?</label>
+                        <textarea id="tech3_3" name="tech3_3" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech3_4" class="block text-lg font-medium text-gray-700 mb-2">4. (Ваша відповідь). Чому це важливо?</label>
+                        <textarea id="tech3_4" name="tech3_4" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="question-block">
+                        <label for="tech3_5" class="block text-lg font-medium text-gray-700 mb-2">5. (Ваша відповідь - це і є ваша основна цінність)</label>
+                        <textarea id="tech3_5" name="tech3_5" rows="3" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('unpackingForm');
+            const textareas = form.querySelectorAll('textarea');
+            const downloadButton = document.getElementById('downloadButton');
+            const clearButton = document.getElementById('clearButton');
+            const storageKey = 'unpackingAnswers_YuliaDvns';
+
+            // --- 1. Load answers from localStorage ---
+            function loadAnswers() {
+                const savedData = localStorage.getItem(storageKey);
+                if (savedData) {
+                    try {
+                        const data = JSON.parse(savedData);
+                        textareas.forEach(textarea => {
+                            if (data[textarea.name]) {
+                                textarea.value = data[textarea.name];
+                            }
+                        });
+                    } catch (error) {
+                        console.error("Failed to parse saved data:", error);
+                        localStorage.removeItem(storageKey);
+                    }
+                }
+            }
+
+            // --- 2. Save answers to localStorage ---
+            function saveAnswers() {
+                const data = {};
+                textareas.forEach(textarea => {
+                    if(textarea.value) { // Only save non-empty values
+                        data[textarea.name] = textarea.value;
+                    }
+                });
+                localStorage.setItem(storageKey, JSON.stringify(data));
+            }
+
+            // --- 3. Generate Text Content ---
+            function generateTextContent() {
+                let content = "ВІДПОВІДІ З ОПИТУВАЛЬНИКА 'РОЗПАКОВКА ЕКСПЕРТНОСТІ'\n";
+                content += "===================================================\n\n";
+
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const mainTitleEl = section.querySelector('h2');
+                    if (mainTitleEl) {
+                        content += `\n\n${mainTitleEl.textContent.trim().toUpperCase()}\n`;
+                        content += "---------------------------------------------------\n";
+                    }
+
+                    const subsections = section.querySelectorAll('h3');
+                    if (subsections.length > 0) {
+                        subsections.forEach(subsection => {
+                            const subTitleEl = subsection;
+                            if (subTitleEl) {
+                                content += `\n\n### ${subTitleEl.textContent.trim()} ###\n\n`;
+                            }
+
+                            // Find all question blocks within this subsection's parent
+                            let currentElement = subsection.nextElementSibling;
+                            while (currentElement && currentElement.tagName !== 'H3' && currentElement.tagName !== 'H2') {
+                                if (currentElement.classList.contains('question-block') || currentElement.querySelector('.question-block')) {
+                                    const blocks = currentElement.querySelectorAll('.question-block');
+                                    blocks.forEach(block => {
+                                        const label = block.querySelector('label');
+                                        const textarea = block.querySelector('textarea');
+                                        if (label && textarea && textarea.value.trim() !== '') {
+                                            content += `ПИТАННЯ:\n${label.textContent.trim()}\n\n`;
+                                            content += `ВІДПОВІДЬ:\n${textarea.value.trim()}\n`;
+                                            content += "--------------------\n";
+                                        }
+                                    });
+                                }
+                                currentElement = currentElement.nextElementSibling;
+                            }
+                        });
+                    } else {
+                         // Handle sections without h3 (like part 2)
+                         const blocks = section.querySelectorAll('.question-block');
+                         blocks.forEach(block => {
+                            const label = block.querySelector('label');
+                            const textarea = block.querySelector('textarea');
+                            if (label && textarea && textarea.value.trim() !== '') {
+                                content += `ПИТАННЯ:\n${label.textContent.trim()}\n\n`;
+                                content += `ВІДПОВІДЬ:\n${textarea.value.trim()}\n`;
+                                content += "--------------------\n";
+                            }
+                        });
+                    }
+                });
+
+                return content;
+            }
+
+            // --- 4. Event Listeners ---
+
+            // Auto-save on input
+            form.addEventListener('input', saveAnswers);
+
+            // Load on page start
+            loadAnswers();
+
+            // Download button
+            downloadButton.addEventListener('click', () => {
+                saveAnswers(); // Ensure latest data is saved
+                const textContent = generateTextContent();
+                
+                if (textContent.length < 200) { // Check if form is mostly empty
+                    // Do not use alert(), show a message in a non-blocking way
+                    downloadButton.textContent = 'Будь ласка, заповніть поля';
+                    downloadButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    downloadButton.classList.add('bg-yellow-500');
+                    setTimeout(() => {
+                        downloadButton.textContent = 'Завантажити відповіді (TXT)';
+                        downloadButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                        downloadButton.classList.remove('bg-yellow-500');
+                    }, 2000);
+                    return;
+                }
+
+                const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'yulia_dvns_answers.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+            // Clear button
+            clearButton.addEventListener('click', () => {
+                // We avoid using window.confirm() as requested
+                textareas.forEach(textarea => {
+                    textarea.value = '';
+                });
+                // Save the cleared state
+                saveAnswers(); 
+                // Show feedback to user
+                clearButton.textContent = 'Поля очищено!';
+                clearButton.classList.remove('bg-red-600', 'hover:bg-red-700');
+                clearButton.classList.add('bg-gray-500');
+                setTimeout(() => {
+                    clearButton.textContent = 'Очистити всі поля';
+                    clearButton.classList.add('bg-red-600', 'hover:bg-red-700');
+                    clearButton.classList.remove('bg-gray-500');
+                }, 1500);
+            });
+        });
+    </script>
+
+</body>
+</html>
